@@ -1,28 +1,26 @@
-
 class AvengersHeadQuarter
 
-    attr_accessor :list
+    attr_accessor :lista
 
     def initialize
-        self.list = [] 
-
+        self.lista = []
     end
 
     def put(avenger)
-        self.list.push(avenger)
-    end 
+        self.lista.push(avenger)
+    end
 
 
-end 
+end
 
-## <------- TDD -------->
+# -------- TDD  (Desenvolvimento guiado por Testes)
 describe AvengersHeadQuarter do
 
-    it 'Deve adicionar um vingador' do
+    it 'deve adicionar um vingador' do
         hq = AvengersHeadQuarter.new
 
         hq.put('Spiderman')
-        expect(hq.list).to eql ['Spiderman']
+        expect(hq.lista).to eql ['Spiderman']
     end
 
 end
