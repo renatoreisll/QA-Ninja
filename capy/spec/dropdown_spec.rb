@@ -3,7 +3,7 @@
 describe 'Caixa de Seleção', :dropdown do
 
     it 'Item específico simples' do
-        visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
         select('Loki', from: 'dropdown')
         sleep 3  #temporario
 
@@ -11,7 +11,7 @@ describe 'Caixa de Seleção', :dropdown do
 
     it 'Item específico com o find' do
 
-        visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
         drop = find('.avenger-list')
         drop.find('option', text: 'Scott Lang').select_option
         sleep 3  #temporario
@@ -22,7 +22,7 @@ describe 'Caixa de Seleção', :dropdown do
 
             ## Sample: sorteio de um item...
 
-        visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
         drop = find('.avenger-list')
         drop.all('option').sample.select_option
         sleep 3  #temporario

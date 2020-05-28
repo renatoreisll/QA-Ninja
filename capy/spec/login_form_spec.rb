@@ -1,7 +1,7 @@
 describe "Forms"  do
 
     it 'Login com sucesso' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+        visit '/login'
 
         ## Preenchendo formulário de login e senha usando o ID do elemento
         fill_in 'userId', with: 'stark'
