@@ -20,6 +20,19 @@ RSpec.configure do |config|
   config.before(:example) do
     page.current_window.resize_to(1280, 800)
   end
+
+  config.after(:example) do |e| 
+
+    ## Variável que cria um regex para tirar acentuação e espaços em branco no nome do arquivo.. ##
+
+    nome = e.description.gsub(/[^A-Za-z0-9 ]/, '').tr(' ', '_')
+    
+    ## Agora sim, eu pego o nome de cada cenario ja formatado e tira os prints! ##
+
+    page.save_screenshot('log/' + nome + '.png')
+
+  end 
+  
 end
 
 Capybara.configure do |config|
