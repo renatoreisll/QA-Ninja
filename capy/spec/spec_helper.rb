@@ -29,7 +29,7 @@ RSpec.configure do |config|
     
     ## Agora sim, eu pego o nome de cada cenario ja formatado e tira os prints! ##
 
-    page.save_screenshot('log/' + nome + '.png')
+    page.save_screenshot('log/' + nome + '.png') if e.exception  ## condição aplicada que apenas tira o screenshot se o teste falhar ##
 
   end 
   
